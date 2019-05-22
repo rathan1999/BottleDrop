@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BotttleDrop</string>
+    <string name="loginButtonName"><u>Have an account? login</u></string>
 </resources>
