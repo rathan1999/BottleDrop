@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "741681888053",
+    "firebase_url": "https://bottledrop-eb2f9.firebaseio.com",
+    "project_id": "bottledrop-eb2f9",
+    "storage_bucket": "bottledrop-eb2f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741681888053:android:73f8faca16e58d97",
+        "android_client_info": {
+          "package_name": "com.example.sairathan.botttledrop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741681888053-kg5vie5v19kdh9is05nuipi0vk479ie8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sairathan.botttledrop",
+            "certificate_hash": "a830ca2d14a6ae3c8ec777cd120d40de0aa51947"
+          }
+        },
+        {
+          "client_id": "741681888053-ejhbp9ubdhe5et2sm80nhr2gp8c67p3n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo6OKXaMUgqeljAC-lptcOJc4e0Md-wl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741681888053-ejhbp9ubdhe5et2sm80nhr2gp8c67p3n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
