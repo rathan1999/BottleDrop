@@ -68,6 +68,7 @@ public class OtpActivity extends AppCompatActivity {
     }
 
     private void verifyCode(String code){
+
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationid, code);
         signInWithCredential(credential);
     }

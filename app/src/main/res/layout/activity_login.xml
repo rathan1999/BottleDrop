@@ -1,39 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
+
     <ImageView
         android:id="@+id/slideImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/loginlogo" />
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/innerlogo"
+        app:layout_constraintBottom_toTopOf="@+id/textView21"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/slideImage"
+        android:layout_marginBottom="37dp"
         android:fontFamily="cursive"
         android:paddingTop="2dp"
         android:text="Thousands of products from store near you"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="21sp"
-        android:textStyle="bold|italic" />
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slideImage" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="229dp"
+        android:layout_marginBottom="41dp"
         android:orientation="horizontal"
-        android:padding="15dp">
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21">
 
         <Spinner
             android:id="@+id/spinnerCountries"
@@ -54,16 +71,23 @@
 
     <Button
         android:id="@+id/buttonContinue"
-        android:layout_width="183dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="66dp"
         android:background="#CF000C"
         android:text="Send OTP"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

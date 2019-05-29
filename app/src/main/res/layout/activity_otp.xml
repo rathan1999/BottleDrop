@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/logo"
-    tools:context=".OtpActivity">
+    tools:context=".OtpActivity"
+    tools:layout_editor_absoluteY="25dp">
 
     <EditText
         android:id="@+id/editTextCode"
@@ -13,37 +14,42 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="232dp"
+        android:layout_marginBottom="151dp"
         android:ems="10"
         android:hint="   OTP"
         android:inputType="textMultiLine"
         android:textColorHint="@android:color/black"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="57dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonSignIn"
-        android:layout_width="227dp"
-        android:layout_height="47dp"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="82dp"
+        android:layout_marginTop="15dp"
         android:background="@android:color/background_light"
         android:text="Create Account"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="159dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCode" />
 
     <ProgressBar
         android:id="@+id/progressbar"
         style="?android:attr/progressBarStyle"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/editTextCode"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-214dp"
-        android:visibility="gone"/>
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="80dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/editTextCode"
+        app:layout_constraintStart_toStartOf="@+id/editTextCode" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
