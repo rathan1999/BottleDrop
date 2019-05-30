@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -16,32 +17,34 @@
         android:background="@drawable/innerlogo"
         app:layout_constraintBottom_toTopOf="@+id/textView21"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/slideImage"
-        android:layout_marginBottom="37dp"
-        android:fontFamily="cursive"
+        android:layout_marginBottom="2dp"
+        android:fontFamily="@font/lobster"
         android:paddingTop="2dp"
-        android:text="Thousands of products from store near you"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
+        android:text="Login in to Bottle Drop "
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.202"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slideImage" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="77dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="41dp"
@@ -49,21 +52,26 @@
         android:padding="15dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21">
 
         <Spinner
             android:id="@+id/spinnerCountries"
             android:layout_width="120dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:digits="0123456789"
-            android:hint=" Phone no"
+            android:drawableLeft="@drawable/ic_call_black_24dp"
+            android:drawablePadding="2dp"
+            android:hint="Mobile Number"
             android:maxLength="10"
             android:textColorHint="@android:color/black" />
 
@@ -75,18 +83,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="66dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="5dp"
         android:background="#CF000C"
-        android:text="Send OTP"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Submit"
         android:textAlignment="center"
-        android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
