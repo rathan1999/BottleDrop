@@ -29,20 +29,13 @@ public class OtpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
     private EditText editText;
-    private Button button1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
 
         mAuth = FirebaseAuth.getInstance();
-        button1 = (Button) findViewById(R.id.buttonSignIn);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login1();
-            }
-        });
+
         progressBar = findViewById(R.id.progressbar);
         editText = findViewById(R.id.editTextCode);
 
@@ -80,7 +73,7 @@ public class OtpActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            Intent intent = new Intent(OtpActivity.this, UserActivity.class);
+                            Intent intent = new Intent(OtpActivity.this, UserDetailsActivity.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                             startActivity(intent);
@@ -128,8 +121,5 @@ public class OtpActivity extends AppCompatActivity {
 
         }
     };
-    public void login1(){
-        Intent intent = new Intent(this, AfterLoginActivity.class);
-        startActivity(intent);
-    }
+
 }

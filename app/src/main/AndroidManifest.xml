@@ -12,7 +12,7 @@
         <activity
             android:name=".UserActivity"
             android:label="@string/title_activity_user"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AfterLoginActivity"
             android:screenOrientation="portrait" />
@@ -34,6 +34,8 @@
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".UserDetailsActivity" />
+        <activity android:name=".WebActivity"></activity>
     </application>
 
 </manifest>

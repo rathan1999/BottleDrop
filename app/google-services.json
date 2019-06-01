@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "741681888053-cjpf4he0jpnbl4ck8e8s8h8jd03ub3hq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sairathan.botttledrop",
+            "certificate_hash": "f3cc5b6bbf0e6cfc777a036e0f038db7d11d048d"
+          }
+        },
+        {
           "client_id": "741681888053-kg5vie5v19kdh9is05nuipi0vk479ie8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -48,6 +48,8 @@
         android:layout_marginBottom="11dp"
         android:background="@color/colorPrimaryDark"
         android:fontFamily="@font/lobster2"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="Set Your Delivery Location"
         android:textAlignment="center"
         android:textAllCaps="false"
