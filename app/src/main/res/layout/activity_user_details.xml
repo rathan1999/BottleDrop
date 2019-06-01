@@ -75,20 +75,19 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editTextCode1"
         app:layout_constraintTop_toBottomOf="@+id/editTextCode1" />
-    <EditText
-        android:id="@+id/editTextCode3"
+
+    <Button
+        android:id="@+id/uploadBtn"
         android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginEnd="1dp"
         android:layout_marginTop="1dp"
         android:backgroundTint="@color/colorPrimaryDark"
+        android:drawableLeft="@drawable/ic_call_black_24dp"
         android:ems="10"
         android:hint="  AADHAR Upload"
         android:inputType="textMultiLine"
         android:paddingLeft="10dp"
-        android:drawableLeft="@drawable/ic_call_black_24dp"
         android:paddingRight="10dp"
         android:textColorHint="@android:color/black"
         android:textSize="18sp"
@@ -117,7 +116,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCode3" />
+        app:layout_constraintTop_toBottomOf="@+id/uploadBtn" />
 
     <ProgressBar
         android:id="@+id/progressbar"

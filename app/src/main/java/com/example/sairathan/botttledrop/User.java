@@ -4,7 +4,6 @@ public class User {
   private String Name;
   private String email;
   private long aadharcardnumber;
-  private long aadharnumber;
 
     public User() {
     }
@@ -31,13 +30,5 @@ public class User {
 
     public void setAadharcardnumber(long aadharcardnumber) {
         this.aadharcardnumber = aadharcardnumber;
-    }
-
-    public long getAadharnumber() {
-        return aadharnumber;
-    }
-
-    public void setAadharnumber(long aadharnumber) {
-        this.aadharnumber = aadharnumber;
     }
 }
