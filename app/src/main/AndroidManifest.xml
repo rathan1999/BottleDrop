@@ -3,7 +3,8 @@
     package="com.example.sairathan.botttledrop">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,10 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".UserActivity"
-            android:label="@string/title_activity_user"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AfterLoginActivity"
             android:screenOrientation="portrait" />
@@ -36,8 +33,10 @@
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".UserDetailsActivity" />
-        <activity android:name=".WebActivity"></activity>
+        <activity android:name=".UserDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".WebActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

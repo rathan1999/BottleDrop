@@ -1,9 +1,14 @@
 package com.example.sairathan.botttledrop;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -26,10 +31,15 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class UserDetailsActivity extends AppCompatActivity {
-    EditText name,email,aadharcardnumber;
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
+public class UserDetailsActivity extends AppCompatActivity {
+    EditText name,email,aadharcardnumber,address;
+    String position,area,postalcode,country,city;
     Button btnsave,uploadBtn;
+    Button btnLoc;
     private FirebaseAuth firebaseAuth;
     private Uri filePath;
     private final int PICK_IMAGE_REQUEST = 71;
@@ -39,7 +49,9 @@ public class UserDetailsActivity extends AppCompatActivity {
     User user;
     FirebaseStorage storage;
     StorageReference storageReference;
-
+    Geocoder geocoder;
+    List<Address> positions;
+    double lat,lon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +59,16 @@ public class UserDetailsActivity extends AppCompatActivity {
         name = (EditText)findViewById(R.id.editTextCode);
         email= (EditText)findViewById(R.id.editTextCode1);
         aadharcardnumber = (EditText)findViewById(R.id.editTextCode2);
+        address = (EditText)findViewById(R.id.editTextCode3) ;
 
-
+        btnLoc = (Button) findViewById(R.id.latlong);
+        ActivityCompat.requestPermissions(UserDetailsActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 123);
         //aadharnumber = (EditText)findViewById(R.id.uploadBtn);
         btnsave = (Button)findViewById(R.id.buttonAdd);
         uploadBtn = (Button)findViewById(R.id.uploadBtn);
         user = new User();
+    geocoder = new Geocoder(this, Locale.getDefault());
+
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -76,6 +92,35 @@ public class UserDetailsActivity extends AppCompatActivity {
         });
         FirebaseUser user1 = firebaseAuth.getCurrentUser();
 
+        btnLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                GpsTracker gt = new GpsTracker(getApplicationContext());
+                Location l = gt.getLocation();
+                if( l == null){
+                    Toast.makeText(getApplicationContext(),"GPS unable to get Value",Toast.LENGTH_SHORT).show();
+                }else {
+                    lat = l.getLatitude();
+                    lon = l.getLongitude();
+
+                    try {
+                        positions = geocoder.getFromLocation(lat,lon,1);
+                         position = positions.get(0).getAddressLine(0);
+                         area = positions.get(0).getLocality();
+                         city = positions.get(0).getAdminArea();
+                         country = positions.get(0).getCountryName();
+                         postalcode = positions.get(0).getPostalCode();
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(getApplicationContext(),"Lat Long added",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +135,8 @@ public class UserDetailsActivity extends AppCompatActivity {
                 final String name1 = name.getText().toString().trim();
                 final String email1 = email.getText().toString().trim();
                 final String phoneaadhar = aadharcardnumber.getText().toString().trim();
+                final String address1 = address.getText().toString().trim();
+
                 if(name1.isEmpty())
                 {
                     name.setError(getString(R.string.input_error_name));
@@ -98,6 +145,8 @@ public class UserDetailsActivity extends AppCompatActivity {
                 }
 
                     user.setName(name.getText().toString().trim());
+
+
 
                 if (email1.isEmpty()) {
                     email.setError(getString(R.string.input_error_email));
@@ -115,7 +164,7 @@ public class UserDetailsActivity extends AppCompatActivity {
 
 
                 if (phoneaadhar.isEmpty()) {
-                    aadharcardnumber.setError(getString(R.string.input_error_phone));
+                    aadharcardnumber.setError(getString(R.string.input_error_phone_invalid));
                     aadharcardnumber.requestFocus();
                     return;
                 }
@@ -127,6 +176,33 @@ public class UserDetailsActivity extends AppCompatActivity {
                 }
                 Long phn = Long.parseLong(aadharcardnumber.getText().toString().trim());
                 user.setAadharcardnumber(phn);
+
+                if(address1.isEmpty())
+                {
+                    address.setError(getString(R.string.input_error_address));
+                    address.requestFocus();
+                    return;
+                }
+                user.setAddress(address.getText().toString().trim());
+
+                if(lat == 0 || lon ==0 )
+                {
+                    btnLoc.setError(getString(R.string.input_error_location_invalid));
+                   // btnLoc.requestFocus();
+                    return;
+                }
+                else {
+                    user.setLati(lat);
+                    user.setLongi(lon);
+                    user.setPosition(position);
+                    user.setArea(area);
+                    user.setCity(city);
+                    user.setCountry(country);
+                    user.setPostalcode(postalcode);
+                   // Toast.makeText(UserDetailsActivity.this, "Location inserted ", Toast.LENGTH_LONG).show();
+               // btnLoc.clearFocus();
+                }
+
 
                 //user.setAadharnumber(aadh);
                // reff.child(String.valueOf(maxid+1)).setValue(user);
