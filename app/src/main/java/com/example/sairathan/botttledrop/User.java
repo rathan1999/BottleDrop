@@ -6,9 +6,25 @@ public class User {
   private String Address;
   private long aadharcardnumber;
 private double Lati,Longi;
-
+private String Home,Office;
     public String getPosition() {
         return Position;
+    }
+
+    public String getHome() {
+        return Home;
+    }
+
+    public void setHome(String home) {
+        Home = home;
+    }
+
+    public String getOffice() {
+        return Office;
+    }
+
+    public void setOffice(String office) {
+        Office = office;
     }
 
     public void setPosition(String position) {

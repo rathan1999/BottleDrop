@@ -9,6 +9,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="input_error_name">name required</string>
+    <string name="input_home_name">home or office required</string>
     <string name="input_error_email">email required</string>
     <string name="input_error_address">address required</string>
     <string name="input_error_password">password required</string>

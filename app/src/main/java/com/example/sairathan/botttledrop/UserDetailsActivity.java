@@ -131,6 +131,7 @@ public class UserDetailsActivity extends AppCompatActivity {
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final String vamshi = " ";
                 //Long aadh = Long.parseLong(aadharnumber.getText().toString().trim());
                 final String name1 = name.getText().toString().trim();
                 final String email1 = email.getText().toString().trim();
@@ -202,7 +203,8 @@ public class UserDetailsActivity extends AppCompatActivity {
                    // Toast.makeText(UserDetailsActivity.this, "Location inserted ", Toast.LENGTH_LONG).show();
                // btnLoc.clearFocus();
                 }
-
+                user.setHome(vamshi);
+                user.setOffice(vamshi);
 
                 //user.setAadharnumber(aadh);
                // reff.child(String.valueOf(maxid+1)).setValue(user);
@@ -269,7 +271,7 @@ public class UserDetailsActivity extends AppCompatActivity {
     }
 
     public void login12(){
-        Intent intent = new Intent(this, WebActivity.class);
+        Intent intent = new Intent(this, AddressActivity.class);
         startActivity(intent);
     }
 }

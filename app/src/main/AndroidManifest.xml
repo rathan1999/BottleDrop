@@ -41,7 +41,8 @@
         <activity
             android:name=".WebActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".Services"></activity>
+        <activity android:name=".Services" />
+        <activity android:name=".AddressActivity"></activity>
     </application>
 
 </manifest>
