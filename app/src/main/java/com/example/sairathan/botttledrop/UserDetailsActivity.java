@@ -271,7 +271,7 @@ public class UserDetailsActivity extends AppCompatActivity {
     }
 
     public void login12(){
-        Intent intent = new Intent(this, AddressActivity.class);
+        Intent intent = new Intent(this, WebActivity.class);
         startActivity(intent);
     }
 }
